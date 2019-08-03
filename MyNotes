@@ -1,0 +1,6 @@
+Create Dockfile
+create docker-compose.yml
+docker-compose build
+
+run staff in build:
+sudo docker-compose run app sh -c "django-admin startproject app ."
