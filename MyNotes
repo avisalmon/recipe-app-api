@@ -4,3 +4,5 @@ docker-compose build
 
 run staff in build:
 sudo docker-compose run app sh -c "django-admin startproject app ."
+sudo docker-compose run app sh -c "python manage.py test"
+sudo docker-compose run app sh -c "python manage.py test && flake8"
