@@ -1,5 +1,5 @@
 FROM python:3.7-alpine
-MAINTAINER Avi Salmon
+MAINTAINER John the great
 
 ENV PYTHONUNBUFFERED 1
 
