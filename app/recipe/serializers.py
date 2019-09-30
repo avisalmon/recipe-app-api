@@ -45,3 +45,8 @@ class RecipeSerializer(serializers.ModelSerializer):
                   'link')
 
         read_only_Fields = ('id',)
+
+
+class RecipeDetailSerializer(RecipeSerializer):
+    """ Recipe detail serializer nased on the general serializer"""
+    tags = TagSerializer(many=True, read_only=True)
