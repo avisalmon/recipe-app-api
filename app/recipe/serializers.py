@@ -24,9 +24,9 @@ class IngredientSerializer(serializers.ModelSerializer):
 class RecipeSerializer(serializers.ModelSerializer):
     """Serializer for the Recipes."""
 
-    ingredients = IngredientSerializer(
+    ingredients = serializers.PrimaryKeyRelatedField(
         many=True,
-        read_only=True
+        queryset=Ingredient.objects.all()
     )
 
     tags = serializers.PrimaryKeyRelatedField(
@@ -50,3 +50,4 @@ class RecipeSerializer(serializers.ModelSerializer):
 class RecipeDetailSerializer(RecipeSerializer):
     """ Recipe detail serializer nased on the general serializer"""
     tags = TagSerializer(many=True, read_only=True)
+    ingredients = IngredientSerializer(many=True, read_only=True)
